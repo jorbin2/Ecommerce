@@ -1,0 +1,43 @@
+
+
+
+<div *ngIf="produits">
+
+  <div class="row">
+    <div *ngFor="let p of produits._embedded.produits">
+
+
+
+      <div class="col-md-6">
+
+
+
+        <div class="container">
+
+          <div class="card" style="width: 20rem;">
+            <div class="card-header ">{{p.nom}}</div>
+            <div class="card-body">
+              <img height="190" src="{{this.catService.host+'/photoProduit/'+p.id}}">prix: {{p.prix | number:'0.2'}}</div>
+            <div class="card-footer">
+
+
+
+              <form #f="ngForm" (ngSubmit)="onAddProduitToPanier(p)">
+                <label class="">Quantité:</label>
+                <input type="number" name="quantite" [(ngModel)]="p.quantite" ngModel style="width: 40px">
+                <button *ngIf="authservice.isAuthentificate" type="submit" class="btn btn-primary">ajouter</button>
+              </form>
+
+
+            </div>
+          </div>
+        </div><br>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,43 @@
+
+        <div class="container">
+
+          <div class="card" style="width: 30rem;">
+            <div class="card-header "></div>
+            <div class="card-body">
+            <div class="card-footer">
+
+<table class="table table-striped">
+  <tr>
+    <th>Id</th><th>Nom</th><th>Quantité</th><th>Prix</th>
+
+  </tr>
+  <tr *ngFor="let pi of panierServicePc.getCurrentPanier().items.values()">
+
+    <td>{{pi.id}}</td>
+    <td>{{pi.nomP}}</td>
+    <td>{{pi.quantite}}</td>
+    <td>{{pi.prix}}</td>
+
+
+  </tr>
+  <tr>
+    <td colspan="3">Total</td>
+    <td>{{panierServicePc.getTotal()}}</td>
+  </tr>
+
+
+</table>
+<button type="button" class="btn btn-primary">Commander</button>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+</div>
+
+
+
+
